@@ -40,6 +40,16 @@ foreach($r as $row)
 The commit method will return the number of rows affected by the query by default. A message can be displayed instead.
 
 ```PHP
+$username = "TestName";
+$id = 1;
+
+$q = new Query("
+	UPDATE users SET username = :username WHERE id = :id", [
+		':username' => $username,
+		':id' => $id
+	]
+);
+
 $r->commit(); //X number of rows affected
 $r->commit("Query Done!"); //Query Done!
 ```
@@ -59,3 +69,21 @@ else
   //No results returned
 ```
 The getAll(), single(), and commit() methods all setthe getCount() method.
+
+# Basic Example
+
+```PHP
+<?php
+require_once 'path/to/class/Query.php';
+
+$q = new Query("SELECT * FROM users");
+$r = $q->getAll();
+
+if($q->getCount() !=0) {
+  foreach($r as $row) {
+    echo $row->id.". ".$row->username."<br>";
+  }
+} else {
+  echo "No results were returned!";
+}
+```
