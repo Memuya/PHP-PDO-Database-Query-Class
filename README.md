@@ -22,7 +22,7 @@ $q = new Query("SELECT * FROM users WHERE id = :id", [':id' => 1]);
 
 ## 4. Choose a method for your needs
 
-### 4.1. Return a single row
+#### 4.1. Return a single row
 
 ```PHP
 $r = $q->single();
