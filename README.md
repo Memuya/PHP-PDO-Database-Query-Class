@@ -7,7 +7,7 @@ e.g. Change the dbname variable to your database name.
 
 ## 2. Include the Query class
 
-```
+```PHP
 require_once 'path/to/class/Query.php;
 ```
 ## 3. Make a query
@@ -16,7 +16,7 @@ require_once 'path/to/class/Query.php;
 $q = new Query("SELECT * FROM users WHERE id = :id", [':id' => 1]);
 ```
 
-## 4. Choose a method for you needs
+## 4. Choose a method for your needs
 
 ### 4.1. Return a single row
 
@@ -32,7 +32,7 @@ $r = $q->getAll();
 
 //Loop through returned array and output information
 foreach($r as $row)
-  $row->username."<br>";
+  echo $row->username."<br>";
 ```
 
 ### 4.3. Execute a query (UPDATE, INSERT, DELETE, etc)
