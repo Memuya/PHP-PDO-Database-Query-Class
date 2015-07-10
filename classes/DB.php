@@ -21,8 +21,12 @@ class DB {
 	* Connects to database via PDO and sets the error mode to exception
 	*/
 	public function connect() {
-		$this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user, $this->pass);
-		$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		try {
+			$this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user, $this->pass);
+			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		} catch(PDOException $ex) {
+			die($ex->getMessage());
+		}
 	}
 
 	/**
