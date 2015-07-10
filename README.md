@@ -79,7 +79,7 @@ require_once 'path/to/class/Query.php';
 $q = new Query("SELECT * FROM users");
 $r = $q->getAll();
 
-if($q->getCount() !=0) {
+if($q->getCount() != 0) {
   foreach($r as $row) {
     echo $row->id.". ".$row->username."<br>";
   }
