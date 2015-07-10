@@ -29,7 +29,7 @@ $r = $q->single();
 echo $r->username;
 ```
 
-### 4.2. Return all rows
+#### 4.2. Return all rows
 
 ```PHP
 $r = $q->getAll();
@@ -39,7 +39,7 @@ foreach($r as $row)
   echo $row->username."<br>";
 ```
 
-### 4.3. Execute a query (UPDATE, INSERT, DELETE, etc)
+#### 4.3. Execute a query (UPDATE, INSERT, DELETE, etc)
 
 The commit method will return the number of rows affected by the query by default. A message can be displayed instead.
 
