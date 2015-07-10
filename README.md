@@ -1,9 +1,9 @@
 # PHP-PDO-Database-Classes
 Easy way to connect and query your database via PDO.
 
-## 1. Go into the DB.php file and change values for your database
+# Get Started
 
-e.g. Change the dbname variable to your database name.
+## 1. Edit the DB.php file and change values for your database
 
 ## 2. Include the Query class
 
