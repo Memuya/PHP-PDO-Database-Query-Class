@@ -12,7 +12,7 @@ require_once 'path/to/class/Query.php;
 ```
 ## 3. Make a query
 
-```
+```PHP
 $q = new Query("SELECT * FROM users WHERE id = :id", [':id' => 1]);
 ```
 
@@ -20,14 +20,14 @@ $q = new Query("SELECT * FROM users WHERE id = :id", [':id' => 1]);
 
 ### 4.1. Return a single row
 
-```
+```PHP
 $r = $q->single();
 echo $r->username;
 ```
 
 ### 4.2. Return all rows
 
-```
+```PHP
 $r = $q->getAll();
 
 //Loop through returned array and output information
@@ -39,7 +39,7 @@ foreach($r as $row)
 
 The commit method will return the number of rows affected by the query by default. A message can be displayed instead.
 
-```
+```PHP
 $r->commit(); //X number of rows affected
 $r->commit("Query Done!"); //Query Done!
 ```
@@ -48,7 +48,7 @@ $r->commit("Query Done!"); //Query Done!
 
 You can use the getCount() method to validate how many rows were returned
 
-```
+```PHP
 //Only loop through results if at least ONE row has been returned
 $q = new Query("SELECT * FROM users");
 $r = $q->getAll(); //This will set the getCount() method
