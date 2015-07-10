@@ -13,10 +13,10 @@ require_once 'path/to/class/Query.php;
 ## 3. Make a query
 
 ```PHP
-//no binds made to query
+//No binds made to query
 $q = new Query("SELECT * FROM users");
 
-//binds made to query
+//Binds made to query
 $q = new Query("SELECT * FROM users WHERE id = :id", [':id' => 1]);
 ```
 
