@@ -72,7 +72,7 @@ if($q->getCount() != 0)
 else
   //No results returned
 ```
-The getAll(), single(), and commit() methods all setthe getCount() method.
+The getAll(), single(), and commit() methods all set the getCount() method.
 
 # Basic Example
 
