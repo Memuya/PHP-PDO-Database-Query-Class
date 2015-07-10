@@ -1,6 +1,5 @@
 <?php
 class DB {
-	protected static $connected = false;
 	protected $db;
 	protected $host = "localhost";
 	protected $dbname = "dbname";
