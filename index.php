@@ -8,12 +8,12 @@ require_once 'classes/Query.php';
 //Query and bind values
 $q = new Query("SELECT * FROM users WHERE id = :id", [':id' => 1]);
 
-//1. Store results in a variable and access the information you need
+//Store results in a variable and access the information you need
 $r = $q->single();
-$r->username;
+echo $r->username;
 
-//2. Access the information directly
-$q->single()->username;
+//OR access the information directly
+echo $q->single()->username;
 
 
 /********************
