@@ -37,19 +37,39 @@ class DB {
 	public function getDB() {
 		return $this->db;
 	}
-
+	
+	/**
+	 * Set the database name
+	 * 
+	 * @param string $name
+	 */
 	public function setDBName($name) {
 		$this->dbname = $name;
 	}
-
+	
+	/**
+	 * Set the database host
+	 * 
+	 * @param string $host
+	 */
 	public function setHost($host) {
 		$this->host = $host;
 	}
 
+	/**
+	 * Set the database username
+	 * 
+	 * @param string $user
+	 */
 	public function setDBUser($user) {
 		$this->user = $user;
 	}
-
+	
+	/**
+	 * Set the database user's password
+	 * 
+	 * @param string $pass
+	 */
 	public function setDBPass($pass) {
 		$this->pass = $pass;
 	}
