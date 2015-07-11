@@ -74,6 +74,16 @@ else
 ```
 The getAll(), single(), and commit() methods all set the getCount() method.
 
+# Change PDO fetch style
+By default, PDO::FETCH_OBJ is used, though it can be changed to any of the other [fetch styles](http://php.net/manual/en/pdostatement.fetch.php).
+
+```PHP
+$q = new Query("SELECT * FROM users");
+$q->setFetchStyle(PDO::FETCH_ASSOC);
+```
+
+If you want to permanently change the PDO fetch style for all queries, you can do so by changing the $fetch_style variable in the Query class (found in the constructor).
+
 # Basic Example
 
 ```PHP
