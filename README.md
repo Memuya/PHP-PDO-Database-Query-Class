@@ -3,7 +3,7 @@ Easy way to connect and query your database via PDO.
 
 # Get Started
 
-## 1. Edit the DB.php file and change values for your database
+## 1. Edit the DB.php file to add your database values
 
 ## 2. Include the Query class
 
