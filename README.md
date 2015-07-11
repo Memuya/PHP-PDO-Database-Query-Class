@@ -1,4 +1,4 @@
-# PHP-PDO-Database-Classes
+# PHP PDO Query Class
 Easy way to connect and query your database via PDO.
 
 # Get Started
