@@ -5,7 +5,7 @@ class Query extends DB {
 	private $data;
 	private $sql;
 	private $values;
-	private $fetch_option;
+	private $fetch_style;
 
 	/**
 	* Set sql query and the values to bind to the query
@@ -23,9 +23,7 @@ class Query extends DB {
 	/**
 	* Returns all rows from the database
 	*/
-	public function getAll($fetch_option = PDO::FETCH_OBJ) {
-		$this->fetch_option = (!empty($fetch_option)) ? $fetch_option : $this->fetch_option;
-
+	public function getAll() {
 		try {
 			$q = $this->db->prepare($this->sql);
 
@@ -47,9 +45,7 @@ class Query extends DB {
 	* Returns a single row from the database
 	* Use as $obj->single()->fieldYouWant
 	*/
-	public function single($fetch_option = PDO::FETCH_OBJ) {
-		$this->fetch_option = (!empty($fetch_option)) ? $fetch_option : $this->fetch_option;
-
+	public function single() {
 		try {
 			$q = $this->db->prepare($this->sql);
 
@@ -83,6 +79,15 @@ class Query extends DB {
 		$suffix = ($this->count != 1) ? 's' : null;
 
 		return (!empty($message)) ? $message : $this->count." row".$suffix." affected";
+	}
+	
+	/**
+	 * Change the PDO fetch style
+	 * 
+	 * @param string $style
+	 */
+	public function setFetchStyle($style) {
+		$this->fetch_style = $style;
 	}
 
 	/**
