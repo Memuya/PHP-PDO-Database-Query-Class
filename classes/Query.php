@@ -34,9 +34,12 @@ class Query extends DB {
 		
 		$this->count = $q->rowCount();
 		
-		if($this->count != 0)
-			while($r = $q->fetch($this->fetch_option)) 
+		if($this->count != 0) {
+			$row = $q->fetchAll($this->fetch_style);
+			foreach ($row as $r) {
 				$this->data[] = $r;
+			}
+		}
 				  
 		return $this->data;
 	}
