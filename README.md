@@ -101,3 +101,43 @@ if($q->getCount() != 0) {
   echo "No results were returned!";
 }
 ```
+# Using the DB class
+The DB class can be used by itself without the use of the Query class.
+
+```PHP
+require_once 'path/to/class/DB.php';
+
+//Create the database object
+$db = new DB();
+
+//You can also create the object and not connect to the database
+//This is useful for changing database information
+$db = new DB(false);
+```
+
+## Update Database Information
+You can either set the database information permantly inside the class by editing the DB.php file, or do as followed.
+
+```PHP
+//Set database name
+$db->setDBName("database_name");
+//Set database host
+$db->setDBHost("localhost");
+//Set database username
+$db->setDBUser("root");
+//Set database password
+$db->setDBPass("pass");
+```
+
+## Make a Query
+Making a query with the DB class without the Query class is done using normal PDO methods.
+```PHP
+//Make a query and set it to the $q variable
+$q = $db->getDB()->query("SELECT * FROM users);
+//Get the number of rows returned
+$count = $q->rowCount();
+//Get the results from the query
+$rows = $q->fetch(PDO::FETCH_OBJ);
+
+//Do something with data returned
+```
