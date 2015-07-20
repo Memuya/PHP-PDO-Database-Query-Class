@@ -1,19 +1,23 @@
 <?php
 class DB {
 	protected $db;
+	protected $db_server = "mysql";
 	protected $host = "localhost";
 	protected $dbname = "dbname";
 	protected $user = "root";
 	protected $pass = "";
 
 	/**
-	* Calls the connect() method to connect to the database when the DB object is created
+	* Calls the connect() method to connect to the database when the DB object is created only if $connect is set to true
+	* You may want to set $onnect to false if you want to change database information and then re-connect
 	*/
-	public function __construct() {
-		try {
-			$this->connect();
-		} catch(PDOException $ex) {
-			die($ex->getMessage());
+	public function __construct($connect = true) {
+		if($connect) {
+			try {
+				$this->connect();
+			} catch(PDOException $ex) {
+				die($ex->getMessage());
+			}
 		}
 	}
 
@@ -22,7 +26,7 @@ class DB {
 	*/
 	public function connect() {
 		try {
-			$this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user, $this->pass);
+			$this->db = new PDO($this->db_server.":host=".$this->host.";dbname=".$this->dbname, $this->user, $this->pass);
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		} catch(PDOException $ex) {
 			die($ex->getMessage());
