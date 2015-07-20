@@ -119,6 +119,8 @@ $db = new DB(false);
 You can either set the database information permantly inside the class by editing the DB.php file, or do as followed.
 
 ```PHP
+//Create the DB object but do not connect to the database
+$db = new DB(false);
 //Set database name
 $db->setDBName("database_name");
 //Set database host
@@ -127,6 +129,8 @@ $db->setDBHost("localhost");
 $db->setDBUser("root");
 //Set database password
 $db->setDBPass("pass");
+//Connect to the database with the new information
+$db->connect();
 ```
 
 ## Make a Query
