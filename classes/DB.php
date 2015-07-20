@@ -46,7 +46,7 @@ class DB {
 	 * 
 	 * @param string $server
 	 */
-	public function setDBName($server) {
+	public function setDBServer($server) {
 		$this->db_server = $server;
 	}
 	
