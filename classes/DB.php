@@ -34,12 +34,20 @@ class DB {
 	}
 
 	/**
-	* Returns the database connection to be used outside of the clas
+	* Returns the database connection to be used outside of the class
 	*
-	* e.g. $q = $this->db->getDB()->query("sql");
 	*/
 	public function getDB() {
 		return $this->db;
+	}
+	
+	/**
+	 * Set which type of server the database connects to
+	 * 
+	 * @param string $server
+	 */
+	public function setDBName($server) {
+		$this->db_server = $server;
 	}
 	
 	/**
