@@ -137,7 +137,7 @@ $db->connect();
 Making a query with the DB class without the Query class is done using normal PDO methods.
 ```PHP
 //Make a query and set it to the $q variable
-$q = $db->getDB()->query("SELECT * FROM users);
+$q = $db->getDB()->query("SELECT * FROM users");
 //Get the number of rows returned
 $count = $q->rowCount();
 //Get the results from the query
