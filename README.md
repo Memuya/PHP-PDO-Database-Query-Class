@@ -109,9 +109,10 @@ require_once 'path/to/class/DB.php';
 
 //Create the database object
 $db = new DB();
+```
 
-//You can also create the object and not connect to the database
-//This is useful for changing database information
+You can also create the object and not connect to the database. This is useful for when changing database information (as shown below).
+```PHP
 $db = new DB(false);
 ```
 
