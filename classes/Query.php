@@ -1,4 +1,11 @@
 <?php
+/**
+ * An easy way to query your database
+ * 
+ * @Version 1.0
+ * @Year 2015
+ * @Author Mehmet Uyanik
+ */
 require_once 'classes/DB.php';
 class Query extends DB {
 	private $count;
