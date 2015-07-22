@@ -1,4 +1,11 @@
 <?php
+/**
+ * Connect to a database via PDO
+ * 
+ * @Version 1.0
+ * @Year 2015
+ * @Author Mehmet Uyanik
+ */
 class DB {
 	protected $db;
 	protected $db_server = "mysql";
