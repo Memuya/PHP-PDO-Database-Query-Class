@@ -75,6 +75,8 @@ class Query extends DB {
 	/**
 	* Executes a query and return the amount of rows affected if no message is passed through
 	* Used for queries such as DELETE, INSERT, UPDATE, etc
+	* 
+	* @param string $message
 	*/
 	public function commit($message = null) {
 		try {
