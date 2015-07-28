@@ -6,7 +6,6 @@
  * @Year 2015
  * @Author Mehmet Uyanik
  */
-<?php
 class DB {
 	protected static $connected = false;
 	public static $db;
