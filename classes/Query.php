@@ -67,7 +67,7 @@ class Query extends DB {
 		$this->count = $q->rowCount();
 		
 		if($this->count != 0)
-			$this->data = $q->fetch($this->fetch_option);
+			$this->data = $q->fetch($this->fetch_style);
 				  
 		return $this->data;
 	}
