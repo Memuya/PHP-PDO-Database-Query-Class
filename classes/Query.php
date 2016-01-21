@@ -24,7 +24,7 @@ class Query extends DB {
 		parent::__construct();
 		$this->sql = $sql;
 		$this->values = $values;
-		$this->fetch_option = PDO::FETCH_OBJ;
+		$this->fetch_style = PDO::FETCH_OBJ;
 	}
 
 	/**
